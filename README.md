@@ -1,6 +1,7 @@
 <!-- LegibleLambdas -->
 
 <!-- [[file:~/Documents/Julia/scrap.org::*LegibleLambdas][LegibleLambdas:1]] -->
+[![Build Status](https://travis-ci.com/MasonProtter/LegibleLambdas.jl.svg?branch=master)](https://travis-ci.com/MasonProtter/Leg
 Tired of anonymous functions looking like this?
 ```julia
 julia> f = x -> x + 1
