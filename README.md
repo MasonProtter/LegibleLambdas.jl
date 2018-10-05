@@ -16,6 +16,7 @@ julia> h = @λ(x -> g(x)/3)
 (x->g(x) / 3)
 ```
 
+_____
 LegibleLambdas currently aren't as ideally legible as I'd like. For instance,
 ```julia
 julia> D(f, ϵ=1e-10) = @λ(x -> (f(x+ϵ)-f(x))/ϵ)
