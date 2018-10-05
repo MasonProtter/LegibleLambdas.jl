@@ -8,8 +8,7 @@ julia> f = x -> x + 1
 ```
 Enter LegibleLambas
 ```julia
-julia> using Revise, LegibleLambdas
-
+julia> using LegibleLambdas
 julia> g = @λ(x -> 2x)
 (x->2x)
 
