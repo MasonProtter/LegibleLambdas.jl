@@ -36,5 +36,5 @@ whereas in a perfect world the output of the last line would be
 ```julia
 (x->(sin(x + 1e-10) - sin(x)) / 1e-10)
 ```
-so if you know how to make the above work, I'd love to hear from you.
+so if you know how to make the above work, I'd love to hear from you. The real problem is that to do that, you'd need to expand the macro at the function runtime instead of compile time. 
 <!-- LegibleLambdas:1 ends here -->
