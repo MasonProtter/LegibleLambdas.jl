@@ -14,10 +14,10 @@ Enter LegibleLambas
 julia> using LegibleLambdas
 
 julia> g = @λ(x -> 2x)
-(x->2x)
+(x -> 2x)
 
 julia> h = @λ(x -> g(x)/3)
-(x->g(x) / 3)
+(x -> g(x) / 3)
 
 julia> h(3)
 2.0
@@ -30,5 +30,5 @@ julia> D(f, ϵ=1e-10) = @λ(x -> (f(x+ϵ)-f(x))/ϵ)
 D (generic function with 2 methods)
 
 julia> D(sin)
-(x->(sin(x + 1e-10) - sin(x)) / 1e-10)
+(x -> (sin(x + 1e-10) - sin(x)) / 1e-10)
 ```
