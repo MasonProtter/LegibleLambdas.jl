@@ -22,7 +22,7 @@ julia> @λ(x -> g(x)/3)
     macro λ(ex)
         if ex.head == :(->)
             ex_cut = ex |> (ex -> postwalk(cutlnn, ex)) |> (ex -> postwalk(cutblock, ex))
-            name = (repr(ex_cut)[2:end])
+            name = replace((repr(ex_cut)[2:end]), "->" => " -> ")
             :(LegibleLambda($name, $(esc(ex))))
         else
             throw("Must be called on a Lambda expression")
@@ -73,7 +73,7 @@ else
         end
 
         ex_cut = ex |> (ex -> postwalk(cutlnn, ex)) |> (ex -> postwalk(cutblock, ex))
-        return (repr(ex_cut)[2:end])
+        return replace((repr(ex_cut)[2:end]), "->" => " -> ")
     end
 
     function Base.show(io::IO, f::LegibleLambda)
