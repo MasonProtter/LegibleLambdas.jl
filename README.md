@@ -23,7 +23,7 @@ julia> h(3)
 2.0
 ```
 
-If you use it in julia **v1.1+**, it will be more legible
+If you use julia **v1.1+**, anonymous returned by other functions will also benefit from increased legibility
 
 ```julia
 julia> D(f, ϵ=1e-10) = @λ(x -> (f(x+ϵ)-f(x))/ϵ)
