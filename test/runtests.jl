@@ -1,6 +1,3 @@
-# Tests
-
-# [[file:~/Documents/Julia/scrap.org::*Tests][Tests:1]]
 using Test, LegibleLambdas
 
 @testset "Legible Lambdas" begin
@@ -20,7 +17,6 @@ using Test, LegibleLambdas
     @test h("hi", "abh", "ing")
 
     D(f, ϵ=1e-10) = @λ(x -> (f(x+ϵ)-f(x))/ϵ)
-    @test repr(D(sin)) == "(x->(f(x + ϵ) - f(x)) / ϵ)"
+    @test repr(D(sin)) == "(x->((sin)(x + 1.0e-10) - (sin)(x)) / 1.0e-10)"
     @test D(sin)(π) == -1.000000082740371
 end
-# Tests:1 ends here
