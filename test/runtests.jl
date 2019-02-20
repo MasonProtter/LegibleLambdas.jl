@@ -26,5 +26,3 @@ using Test, LegibleLambdas
 
     @test D(sin)(π) == -1.000000082740371
 end
-
-@λ((x, y) -> x + y)
