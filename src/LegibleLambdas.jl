@@ -17,9 +17,7 @@ julia> @λ(x -> g(x)/3)
 """
 :(@λ)
 
-macro lambda(ex)
-    return :(@λ($ex))
-end
+eval(:(const $(Symbol("@lambda")) = $(Symbol("@λ"))))
 
 # NOTE: Base.@locals is in v1.1
 @static if VERSION < v"1.1.0"
