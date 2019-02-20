@@ -1,4 +1,4 @@
-using MLStyle
+using MLStyle: @match
 
 
 replace_variable(ex::Expr, list::Dict) = replace_variable(Val(ex.head), ex, list)
@@ -58,3 +58,5 @@ function replace_variable(::Val{:call}, ex::Expr, list::Dict)
 
     return out_ex
 end
+
+replace_variable(x::Any, ::Dict) = x 

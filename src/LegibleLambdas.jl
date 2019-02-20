@@ -17,8 +17,6 @@ julia> @λ(x -> g(x)/3)
 """
 :(@λ)
 
-eval(:(const $(Symbol("@lambda")) = $(Symbol("@λ"))))
-
 # NOTE: Base.@locals is in v1.1
 @static if VERSION < v"1.1.0"
     # NO Base.@locals
@@ -27,6 +25,8 @@ else
     # With Base.@locals
     include("local.jl")
 end
+
+eval(:(const $(Symbol("@lambda")) = $(Symbol("@λ"))))
 
 include("replace_variable.jl")
 include("expr_printing.jl")
