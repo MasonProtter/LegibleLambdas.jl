@@ -21,7 +21,8 @@ function tupleargs(ex::Expr)
     end
 end
 
-function pretty_kwargs(ex)
+pretty_kwargs(x::Symbol) = x
+function pretty_kwargs(ex::Expr)
     if ex.args[1].head == :block
         exout = copy(ex)
         exout.args[1].head = :tuple
