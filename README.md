@@ -14,23 +14,22 @@ pkg> add https://github.com/MasonProtter/LegibleLambdas.jl.git
 
 ## Introduction
 
-Tired of anonymous functions looking like this?
+LegibleLambdas.jl provides a macro `@λ` (and an alias `@lambda`) for
+defining a type of anonymous function which is printed in a nicer form
+than the relatively uninformative gensyms of traditional anonymous
+functions.
+
+Compare the printing of 
 ```julia
 julia> f = x -> x + 1
 #1 (generic function with 1 method)
 ```
-Enter LegibleLambas
+with 
 ```julia
 julia> using LegibleLambdas
 
-julia> g = @λ(x -> 2x)
-(x -> 2x)
-
-julia> h = @λ(x -> g(x)/3)
-(x -> g(x) / 3)
-
-julia> h(3)
-2.0
+julia> g = @λ(x -> x + 1)
+(x -> x + 1)
 ```
 
 If you use julia **v1.1+**, anonymous returned by other functions will also benefit from increased legibility
