@@ -1,4 +1,4 @@
-# YaoBlockTree
+# LegibleLambdas.jl
 
 [![Build Status](https://travis-ci.com/MasonProtter/LegibleLambdas.jl.svg?branch=master)](https://travis-ci.com/MasonProtter/LegibleLambdas.jl)
 
