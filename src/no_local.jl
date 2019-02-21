@@ -3,7 +3,7 @@
 macro λ(ex)
     if ex.head == :(->)
         ex_cut = ex |> (ex -> postwalk(cutlnn, ex)) |> (ex -> postwalk(cutblock, ex))
-        name = replace((repr(ex_cut)[2:end]), "->" => " -> ")
+        name = replace((repr(ex_cut)[2:end] |> pretty_kwargs), "->" => " -> ")
         :(LegibleLambda($name, $(esc(ex))))
     else
         throw("Must be called on a Lambda expression")

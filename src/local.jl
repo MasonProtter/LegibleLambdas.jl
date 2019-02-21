@@ -22,7 +22,7 @@ function to_string(f::LegibleLambda)
     ex = replace_variable(f.ex, f.vars)
 
     ex_cut = ex |> (ex -> postwalk(cutlnn, ex)) |> (ex -> postwalk(cutblock, ex))
-    return replace((repr(ex_cut)[2:end]), "->" => " -> ")
+    return replace((repr(ex_cut |> pretty_kwargs)[2:end]), "->" => " -> ")
 end
 
 function Base.show(io::IO, f::LegibleLambda)

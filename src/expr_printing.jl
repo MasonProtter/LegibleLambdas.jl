@@ -20,3 +20,13 @@ function tupleargs(ex::Expr)
         throw("expression must have head `:tuple`")
     end
 end
+
+function pretty_kwargs(ex)
+    if ex.args[1].head == :block
+        exout = copy(ex)
+        exout.args[1].head = :tuple
+        exout
+    else
+        ex
+    end
+end
