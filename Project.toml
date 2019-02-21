@@ -1,0 +1,14 @@
+name = "LegibleLambdas"
+uuid = "07054e66-3547-11e9-2c92-a3a3c63e8a38"
+authors = ["MasonProtter <mason.protter@gmail.com>", "Roger-luo <hiroger@qq.com>"]
+version = "0.2.0"
+
+[deps]
+MLStyle = "d8e11817-5142-5d16-987a-aa16d5891078"
+MacroTools = "1914dd2f-81c6-5fcd-8719-6d5c9610ff09"
+
+[extras]
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[targets]
+test = ["Test"]
