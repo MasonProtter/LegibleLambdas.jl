@@ -1,8 +1,18 @@
-<!-- LegibleLambdas -->
-
-<!-- [[file:~/Documents/Julia/scrap.org::*LegibleLambdas][LegibleLambdas:1]] -->
+# YaoBlockTree
 
 [![Build Status](https://travis-ci.com/MasonProtter/LegibleLambdas.jl.svg?branch=master)](https://travis-ci.com/MasonProtter/LegibleLambdas.jl)
+
+Legible Lambdas for Julia.
+
+## Installation
+
+In julia **v1.0+**, type `]` to enter package mode, and:
+
+```
+pkg> add LegibleLambdas
+```
+
+## Introduction
 
 Tired of anonymous functions looking like this?
 ```julia
@@ -32,3 +42,7 @@ D (generic function with 2 methods)
 julia> D(sin)
 (x -> (sin(x + 1e-10) - sin(x)) / 1e-10)
 ```
+
+## License
+
+MIT License
