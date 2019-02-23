@@ -9,7 +9,7 @@ Legible Lambdas for Julia.
 In julia **v1.0+**, type `]` to enter package mode, and:
 
 ```
-pkg> add https://github.com/MasonProtter/LegibleLambdas.jl.git
+pkg> add LegibleLambdas
 ```
 
 ## Introduction
