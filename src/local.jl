@@ -1,4 +1,13 @@
 macro λ(ex)
+    return parse_lambda(ex)
+end
+
+"""
+    parse_lambda(ex)
+
+Parse a lambda expression to `LegibleLambda` constructor expression.
+"""
+function parse_lambda(ex::Expr)
     if ex.head == :(->)
         ex_cut = ex |> (ex -> postwalk(cutlnn, ex)) |> (ex -> postwalk(cutblock, ex))
         name = (repr(ex_cut)[2:end])
