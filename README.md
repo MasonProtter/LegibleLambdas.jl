@@ -32,14 +32,16 @@ julia> g = @λ(x -> x + 1)
 (x -> x + 1)
 ```
 
-If you use julia **v1.1+**, anonymous returned by other functions will also benefit from increased legibility
-
+This 'just works' inside most closures too!
 ```julia
 julia> D(f, ϵ=1e-10) = @λ(x -> (f(x+ϵ)-f(x))/ϵ)
 D (generic function with 2 methods)
 
 julia> D(sin)
-(x -> (sin(x + 1e-10) - sin(x)) / 1e-10)
+(x -> ((sin)(x + 1e-10) - (sin)(x)) / 1e-10)
+
+julia> D(sin, 0.01)
+(x -> ((sin)(x + 0.01) - (sin)(x)) / 0.01)
 ```
 
 ## License
